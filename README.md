@@ -22,7 +22,7 @@ Or install it yourself as:
 
 ```ruby
 OCI8AutoBinder.replace_original_class!
-conn = OCI8.new
+conn = OCI8.new(username, password, ident)
 conn.exec("select * from table1 where column1 = 1") do |r| # use binding
   r.join(',')
 end
