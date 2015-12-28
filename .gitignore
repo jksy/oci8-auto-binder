@@ -1,0 +1,4 @@
+/Gemfile.lock
+*.sw?
+*.gem
+/test/db_config.yml
