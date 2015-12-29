@@ -31,6 +31,15 @@ end
 conn.logoff
 ```
 
+## logging parameterized query and parameters
+```ruby
+OCI8AutoBinder.replace_original_class!
+OCI8AutoBinder.logger = Logger.new(log_file_name)
+OCI8AutoBinder.logger.level = Logger::INFO   # save all log(FOUND_BINDVARS, PARSE_ERROR, NO_PARAMS, PARSE_SUCCESS)
+OCI8AutoBinder.logger.level = Logger::ERROR   # save parse error log(PARSE_ERROR)
+```
+
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/jksy/oci8-auto-binder.

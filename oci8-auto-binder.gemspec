@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["junichiro.kasuya@gmail.com"]
 
   spec.summary       = %q{execute parameternized query for OCI8}
-  spec.description   = %q{execute parameternized query for OCI8}
+  spec.description   = %q{This library changes the query to parameterized query automatically.}
   spec.homepage      = "https://github.com/jksy/oci8-auto-binder"
   spec.licenses      = ["MIT"]
 
@@ -18,9 +18,9 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.required_ruby_version = '>= 1.9.0'
-  spec.add_dependency "bundler", ">= 1.10"
-  spec.add_dependency "rake", ">= 10.0"
-  spec.add_dependency "test-unit", ">= 3.1"
-  spec.add_dependency "ruby-oci8", ">= 2.0"
-  spec.add_dependency "oracle-sql-parser", ">= 0.5.0"
+  spec.add_dependency "bundler", "~> 1.10"
+  spec.add_dependency "rake", "~> 10.0"
+  spec.add_dependency "test-unit", "~> 3.1"
+  spec.add_dependency "ruby-oci8", "~> 2.0"
+  spec.add_dependency "oracle-sql-parser", "~> 0.5"
 end
