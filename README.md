@@ -23,8 +23,10 @@ Or install it yourself as:
 ```ruby
 OCI8AutoBinder.replace_original_class!
 conn = OCI8.new(username, password, ident)
-conn.exec("select * from table1 where column1 = 1") do |r| # change to prarameterized query atomatically in exec method
-  r.join(',')
+conn.exec("select * from table1 where column1 = 1") do |r|
+  # change to prarameterized query atomatically in exec method
+  # query = "select * from table1 where column1 = :a0", params = {:a0 => 1}
+  puts r.join(',')
 end
 conn.logoff
 ```
