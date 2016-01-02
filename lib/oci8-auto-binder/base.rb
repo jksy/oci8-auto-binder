@@ -43,7 +43,7 @@ class OCI8AutoBinder::OCI8 < ::OCI8
       logger.error {"PARSE_ERROR:#{sql}, #{bindvars.inspect}"} if logger
       return exec_without_auto_binder(sql, *bindvars, &block)
     end
-    p = syntax_tree.ast.to_parameternized
+    p = syntax_tree.ast.to_parameterized
     if p.params.size == 0
       logger.info {"NO_PARAMS:#{sql}, #{bindvars.inspect}"} if logger
       return exec_without_auto_binder(sql, *bindvars, &block)
