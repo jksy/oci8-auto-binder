@@ -26,9 +26,9 @@ class Oci8Test < Test::Unit::TestCase
   end
 
   def self.connection
-    @@connection ||= OCI8.new(db_config['username'] || 'system',
-                              db_config['password'] || '',
-                              db_config['ident'] || 'XE')
+    @@connection ||= OCI8.new(db_config['username'],
+                              db_config['password'],
+                              db_config['ident'])
   end
 
   def connection
