@@ -14,7 +14,15 @@ class Oci8Test < Test::Unit::TestCase
   end
 
   def self.db_config
-    @db_config ||= YAML::load_file(File.expand_path('db_config.yml', File.dirname(__FILE__)))
+    return @db_config if @db_config
+
+    path = File.expand_path('db_config.yml', File.dirname(__FILE__))
+    if File.readable? path
+      @db_config = YAML::load_file(File.expand_path('db_config.yml', File.dirname(__FILE__)))
+    else
+      @db_config = {}
+    end
+    @db_config
   end
 
   def self.connection
