@@ -24,7 +24,7 @@ Or install it yourself as:
 OCI8AutoBinder.replace_original_class!
 conn = OCI8.new(username, password, ident)
 conn.exec("select * from table1 where column1 = 1") do |r|
-  # change to prarameterized query atomatically in exec method
+  # change to prarameterized query automatically in exec method
   # query = "select * from table1 where column1 = :a0", params = {:a0 => 1}
   puts r.join(',')
 end
@@ -35,11 +35,12 @@ conn.logoff
 ```ruby
 OCI8AutoBinder.replace_original_class!
 OCI8AutoBinder.logger = Logger.new(log_file_name)
-OCI8AutoBinder.logger.level = Logger::INFO   # save all log(FOUND_BINDVARS, PARSE_ERROR, NO_PARAMS, PARSE_SUCCESS)
+OCI8AutoBinder.logger.level = Logger::INFO    # save all log(FOUND_BINDVARS, PARSE_ERROR, NO_PARAMS, PARSE_SUCCESS)
 OCI8AutoBinder.logger.level = Logger::ERROR   # save parse error log(PARSE_ERROR)
+OCI8AutoBinder.logger = nil                   # do not save logging
 ```
 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/jksy/oci8-auto-binder.
+Bug reports and pull requests and PARSE_ERROR query are welcome on GitHub at https://github.com/jksy/oci8-auto-binder.
