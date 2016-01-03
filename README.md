@@ -1,4 +1,5 @@
 # OCI8 Auto binder
+[![Build Status](https://travis-ci.org/jksy/oci8-auto-binder.svg?branch=master)](https://travis-ci.org/jksy/oci8-auto-binder)
 
 This library changes the query to parameterized query automatically.
 
