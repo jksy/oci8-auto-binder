@@ -14,13 +14,17 @@ class Oci8Test < Test::Unit::TestCase
   end
 
   def self.db_config
-    return @db_config if @db_config
+    return @db_config if defined? @db_config
 
     path = File.expand_path('db_config.yml', File.dirname(__FILE__))
     if File.readable? path
       @db_config = YAML::load_file(File.expand_path('db_config.yml', File.dirname(__FILE__)))
     else
-      @db_config = {}
+      @db_config = {
+        'username' => ENV['ORACLE_USERNAME'],
+        'password' => ENV['ORACLE_PASSWORD'],
+        'ident' => ENV['ORACLE_IDENT'],
+      }
     end
     @db_config
   end
